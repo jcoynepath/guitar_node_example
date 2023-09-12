@@ -1,0 +1,26 @@
+{
+  "name": "guitars",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.6.0",
+    "@types/pg": "^8.10.2",
+    "eslint": "^8.49.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "fastify": "^4.22.2",
+    "json-schema-to-ts": "^2.9.2",
+    "pg": "^8.11.3",
+    "ts-node": "^10.9.1"
+  }
+}
