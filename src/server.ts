@@ -14,3 +14,5 @@ try {
   fastify.log.error(err);
   process.exit(1);
 }
+
+export default fastify;
