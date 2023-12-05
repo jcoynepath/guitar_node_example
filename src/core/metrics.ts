@@ -1,4 +1,4 @@
 export interface Metrics {
   track(): void;
-  doStuff(): void;
+  measure(): void;
 }

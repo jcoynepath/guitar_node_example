@@ -33,7 +33,7 @@ export class GuitarPGStore implements GuitarStore {
       manufacturer: g.manufacturer,
       color: g.color,
     }));
-    this.metrics.doStuff();
+    this.metrics.measure();
     return guitars;
   }
 
