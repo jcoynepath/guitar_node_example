@@ -5,7 +5,7 @@ export class MetricsConsole implements Metrics {
     console.log('tracking stuff');
   }
 
-  doStuff() {
-    console.log('doing stuff');
+  measure() {
+    console.log('measuring stuff');
   }
 }
