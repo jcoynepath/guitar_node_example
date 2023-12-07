@@ -12,10 +12,6 @@ INSERT INTO guitars (name, model, manufacturer, color)
 VALUES ($1, $2, $3, $4);
 `;
 
-const SELECT_BY_NAME = `
-SELECT * FROM guitars WHERE name = $1;
-`;
-
 export class GuitarPGStore implements GuitarStore {
   private readonly metrics: Metrics;
 
@@ -38,14 +34,14 @@ export class GuitarPGStore implements GuitarStore {
   }
 
   async save(guitar: Guitar): Promise<Guitar> {
-    await dbPool.query(INSERT, [
-      guitar.name,
-      guitar.model,
-      guitar.manufacturer,
-      guitar.color,
-    ]);
-    const result = await dbPool.query(SELECT_BY_NAME, [guitar.name]);
-    const saved = result.rows[0];
+    const saved = await dbPool
+      .query(INSERT, [
+        guitar.name,
+        guitar.model,
+        guitar.manufacturer,
+        guitar.color,
+      ])
+      .then((result) => result.rows[0]);
     return {
       name: saved.name,
       model: saved.model,
