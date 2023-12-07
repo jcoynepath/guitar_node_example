@@ -4,12 +4,12 @@ const fastify = Fastify({
   logger: true,
 });
 
-await fastify.register(async (crudApiContext) => {
+void fastify.register(async (crudApiContext) => {
   await crudApiContext.register(guitars);
 });
 
 try {
-  await fastify.listen({ port: 3000 });
+  void fastify.listen({ port: 3000 });
 } catch (err) {
   fastify.log.error(err);
   process.exit(1);
