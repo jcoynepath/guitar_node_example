@@ -1,8 +1,11 @@
 import fs from 'fs';
 import path from 'path';
+import url from 'url';
 import { Guitar } from '../../core/models/index.js';
 import { Metrics } from '../../core/metrics.js';
 import { GuitarStore } from '../../core/stores/guitar.store.js';
+
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 export class GuitarJSONStore implements GuitarStore {
   private readonly metrics: Metrics;
