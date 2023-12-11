@@ -5,7 +5,7 @@ import { Guitar } from '../../core/models/index.js';
 import { Metrics } from '../../core/metrics.js';
 import { GuitarStore } from '../../core/stores/guitar.store.js';
 
-const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+const DIRNAME = url.fileURLToPath(new URL('.', import.meta.url));
 
 export class GuitarJSONStore implements GuitarStore {
   private readonly metrics: Metrics;
@@ -15,7 +15,7 @@ export class GuitarJSONStore implements GuitarStore {
   }
 
   private getPath() {
-    return path.resolve(__dirname, '../../..', 'json/guitars.json');
+    return path.resolve(DIRNAME, '../../..', 'json/guitars.json');
   }
 
   private getFile(): Guitar[] {
